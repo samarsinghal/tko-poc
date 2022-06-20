@@ -1,4 +1,4 @@
-# Tanzu Kubernetes Operations(TKO) PoC Test Plan & Evaluation Overview
+# Tanzu Kubernetes Operations(TKO) PoC Test Plan
 
 This PoC test plan and evaluation process focuses on demonstrating functional operation, capabilities, and features of the Tanzu Kubernetes Operations(TKO) product suite. This POC is to spike on-prem data center Kubernetes solution that VMWare Tanzu provides and evaluate creation and management of production grade Kubernetes clusters with operational simplicity, cost efficiency, and automation support.
 
