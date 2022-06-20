@@ -21,16 +21,17 @@ ID | Objective |
 :-- | :-- |
 OB01|Prove the automation and simplicity of deploying and operationalizing Kubernetes clusters
 OB02|Reveal the advanced, on-demand networking and security capabilities that vSphere 7 with Kubernetes and NSX-T enable through the Kubernetes Container Network Interface (CNI) plug-in
-OB03|Validate the support for applications to leverage multitude of storage options through the vSphere Cloud Native Storage (CNS) – Container Storage Interface (CSI)
-OB04|Show the level of monitoring, alerting, and visibility available through integrations with Tanzu Observability and other Open Source Software (OSS) alternatives
-OB05|Exhibit the availability of centralized multi-cluster Kubernetes management(TMC),multi-master clusters, and the self-healing resiliency of the individual cluster nodes
-OB06|Demonstrate the ability for operators to easily and quickly scale-out Kubernetes clusters resources on-demand
-OB07|Without disruption to running containerized applications, demonstrate patching and upgrading Kubernetes clusters
+OB03|Demonstrate applications leveraging multitude of storage options through the vSphere Cloud Native Storage (CNS)
+OB04|Show Platform-wide observability, alerting, and visibility available through integrations with Tanzu Observability and other Open Source Software (OSS) alternatives
+OB05|Exhibit the availability of Cluster fleet management, quota policies, resource and capacity visibility, multi-master clusters, and the self-healing resiliency of the individual cluster nodes
+OB06|Demonstrate Containers, K8s-as-a-service, Multi-cluster ingress 
+OB07|Demonstrate the ability to easily and quickly patching, upgrading and scale-out Kubernetes clusters without disruption to running applications. 
 OB08|Show the coexistence of both traditional VM-based and containerized applications running parallel on common infrastructure resources
-OB09|Demonstrate vSphere 7 with Kubernetes multi-tenancy and Role Based Access Control (RBAC) capabilities for enterprise environments
+OB09|Demonstrate multi-tenancy RBAC, Policy management, and guardrail enforcement capabilities for enterprise environments
 OB10|Demonstrate managing and securely serving images for containerized applications
-OB11|Demonstrate lifecycle management functions(create, modify, delete) for Service mesh using Tanzu Service Mesh
+OB11|Demonstrate Service mesh solution lifecycle management
 
+ 
 ## Tanzu for Kubernetes Operations(TKO) PoC Process Flow
 
 The quality and completeness of the Customer test goals and objectives, or success criteria, are the key input to constructing useful test cases and producing meaningful results. With that input, the Customer Technical Leads and VMware Systems Engineers can derive a base set of requirements. Then, after analyzing the requirements, generate test scenarios that represent the operational use of the system.  Next, develop test cases within each scenario, ensuring complete allocation of requirements and quantifiable expectations. Finally, execute the test cases to validate system operation and verify compliance with the requirements. 
@@ -40,7 +41,7 @@ The quality and completeness of the Customer test goals and objectives, or succe
 The following table contains an assemblage of requirements inferred by the technology; revised and repurposed from Customer's High level requirements; derived from frequently mentioned Customers' goals and objectives; community involvement; and learned through research and development. The requirements form the basis of the test cases inventory and the test procedures, detailed in later sections. Each requirement maps to its overarching objective and test case(s) responsible for demonstrating functional compliance. Because the test approach is scenario-driven, there is not a 1:1 relationship for all requirements and some requirements may be indirectly satisfied by an encompassing test case.
 
 
-High-level Requirement | ID	| Requirement Description |	Test Case ID(s)	| Status |
+High-level Requirement/Outcomes | ID	| Requirement Description |	Test Case ID(s)	| Status |
 --- | --- | --- | --- | --- |
 Operate and Manage Kubernetes Infrastructure | RQ01 - 01	| CaaS platform shall provide tools to support multiple tenants/clients<br>CaaS platform shall provide automation/tools/API for governing the configuration of the clusters<br>CaaS platform shall provide role based access control by integrating with identity system(Active directory)<br>CaaS platform shall create and configure a Supervisor Cluster Namespace(s) with Resource Limitations | |
 New user cluster creation |	RQ01 - 02 |	CaaS platform shall provide automation/tools/API for creation,modification, and deletion of kubernetes clusters		
@@ -63,7 +64,7 @@ Vernerbility scanning and alerting |	RQ01 - 18 |	TBD | |
 Cert creation and rotation, if needed  |	RQ01 - 19 |	CaaS platform shall provide automation/tools/API to manage platform Certs | |
 Resource monitoring and alerting |	RQ01 - 20 |	CaaS platform shall provide tools for monitoring the infrastructure(virtual machines, pods, containers, ingress) of the kubernetes clusters<br>CaaS platform shall alert based on thresholds<br>CaaS platform shall provide monitoring dashboards for operators | |
 Backup and Restore - cluster level and app level |	RQ01 - 21 |	CaaS platform shall provide automation/tools/API to Backup and Restore a Tanzu Kubernetes Cluster(s), and Apps | |
-Networking needs for communication between base, adming, and user clusters |	RQ01 - 22 |				
+Networking needs for communication between base, adming, and user clusters |	RQ01 - 22 |	TBD | |		
 External LB provision and attachment - Supposed to be provided NSX |	RQ01 - 23 |	CaaS platform shall provide tools for provisioning load balancers/ingress for the kubernetes clusters | |
 Storage attachment  |	RQ01 - 24 |	CaaS platform shall automate the Kubernetes storage provider integration so Kubernetes pods can mount static and dynamic persistent volumes from existing datastores<br>CaaS platform shall provide persistent storage capabilities for containerized applications | |
 Firewall/Route to Oracle database stack - ACLs to single IP |	RQ01 - 25 |	CaaS platform shall support on-demand configuration of network security policies, which allow for micro-segmenting flows between two (2) or more pods sharing a common network or between namespaces and external IP networks | |
@@ -72,7 +73,7 @@ Certificates provision and management for cluster communication user |	RQ01 -�
 Certificates provision and management for applications  |	RQ01 - 28 |	TBD<br>CaaS platform shall allow the importation of custom CA-signed certificates for use with Kubernetes ingress resources | |
 Secret management, integration with on-prem Vault service |	RQ01 - 29 |	CaaS platform shall provide automation/tools/api to integration with on-prem Vault service for secrets management on worker clusters | |
 Virus scan service, WAF, IDS/IPS TBD |	RQ01 - 30 |	TBD | |
-Built-in automation of the above process |	RQ01 - 31 |	TBD | |
+Built-in automation |	RQ01 - 31 |	TBD | |
 Api support  |	RQ01 - 32 |	TBD | |
 24*7 support |	RQ01 - 33 |	TBD | |
 professional services |	RQ01 - 34 |	TBD | |
