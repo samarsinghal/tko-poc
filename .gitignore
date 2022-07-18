@@ -1,3 +1,5 @@
 config/kube.conf
 .DS_Store
 bin
+eduk8s/lab-tanzu-env-workshop.yaml
+eduk8s/learning-center-portal.yaml
