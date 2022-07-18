@@ -1,0 +1,36 @@
+apiVersion: learningcenter.tanzu.vmware.com/v1beta1
+kind: TrainingPortal
+metadata:
+  annotations:
+    kapp.k14s.io/identity: v1;/learningcenter.tanzu.vmware.com/TrainingPortal/learning-center-guided;learningcenter.tanzu.vmware.com/v1beta1
+    kapp.k14s.io/original: '{"apiVersion":"learningcenter.tanzu.vmware.com/v1beta1","kind":"TrainingPortal","metadata":{"labels":{"kapp.k14s.io/app":"1658007347395296835","kapp.k14s.io/association":"v1.4118150621f553e9a7547bc43bcf6830"},"name":"learning-center-guided"},"spec":{"portal":{"ingress":{"hostname":"learning-center-guided"},"registration":{"type":"anonymous"},"reserved":0,"sessions":{"maximum":10},"updates":{"workshop":true}},"workshops":[{"expires":"30m","name":"lab-et-self-guided-tour","orphaned":"10m"}]}}'
+    kapp.k14s.io/original-diff-md5: c6e94dc94aed3401b5d0f26ed6c0bff3
+    kopf.zalando.org/last-handled-configuration: |
+      {"spec":{"portal":{"ingress":{"hostname":"learning-center-guided"},"registration":{"type":"anonymous"},"reserved":0,"sessions":{"maximum":10},"updates":{"workshop":true}},"workshops":[{"expires":"30m","name":"lab-et-self-guided-tour","orphaned":"10m"},{"expires":"30m","name":"lab-tanzu-env","orphaned":"10m"},{"expires":"30m","name":"lab-tanzu-env-01","orphaned":"10m"}]},"metadata":{"labels":{"kapp.k14s.io/app":"1658007347395296835","kapp.k14s.io/association":"v1.4118150621f553e9a7547bc43bcf6830"},"annotations":{"kapp.k14s.io/identity":"v1;/learningcenter.tanzu.vmware.com/TrainingPortal/learning-center-guided;learningcenter.tanzu.vmware.com/v1beta1","kapp.k14s.io/original":"{\"apiVersion\":\"learningcenter.tanzu.vmware.com/v1beta1\",\"kind\":\"TrainingPortal\",\"metadata\":{\"labels\":{\"kapp.k14s.io/app\":\"1658007347395296835\",\"kapp.k14s.io/association\":\"v1.4118150621f553e9a7547bc43bcf6830\"},\"name\":\"learning-center-guided\"},\"spec\":{\"portal\":{\"ingress\":{\"hostname\":\"learning-center-guided\"},\"registration\":{\"type\":\"anonymous\"},\"reserved\":0,\"sessions\":{\"maximum\":10},\"updates\":{\"workshop\":true}},\"workshops\":[{\"expires\":\"30m\",\"name\":\"lab-et-self-guided-tour\",\"orphaned\":\"10m\"}]}}","kapp.k14s.io/original-diff-md5":"c6e94dc94aed3401b5d0f26ed6c0bff3"}}}
+  labels:
+    kapp.k14s.io/app: "1658007347395296835"
+    kapp.k14s.io/association: v1.4118150621f553e9a7547bc43bcf6830
+  name: learning-center-guided
+spec:
+  portal:
+    ingress:
+      hostname: learning-center-guided
+    capacity: 20
+    expires: 120m
+    orphaned: 5m
+    password: Callidus
+    registration:
+      type: anonymous
+    reserved: 5
+    sessions:
+      maximum: 10
+    updates:
+      workshop: true
+  workshops:
+  - expires: 30m
+    name: lab-et-self-guided-tour
+    orphaned: 10m
+  - expires: 120m
+    name: lab-tanzu-env
+    orphaned: 15m
+

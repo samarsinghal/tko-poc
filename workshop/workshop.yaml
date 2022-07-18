@@ -1,0 +1,8 @@
+name: Tanzu for Kubernetes Operations Workshop
+
+modules:
+    activate:
+    - index
+    - labs/setup
+    - labs/testcase
+    - finish

@@ -20,7 +20,7 @@ The goal is promoting Customer confidence in the Tanzu for Kubernetes Operations
 ID | Objective |
 :-- | :-- |
 OB01|Prove the automation and simplicity of deploying and operationalizing Kubernetes clusters
-OB02|Reveal the advanced, on-demand networking and security capabilities that vSphere 7 with Kubernetes and NSX-T enable through the Kubernetes Container Network Interface (CNI) plug-in
+OB02|Reveal the advanced, on-demand networking and security capabilities that vSphere 7 with Kubernetes and NSX ALB enables
 OB03|Demonstrate applications leveraging multitude of storage options through the vSphere Cloud Native Storage (CNS)
 OB04|Show Platform-wide observability, alerting, and visibility available through integrations with Tanzu Observability and other Open Source Software (OSS) alternatives
 OB05|Exhibit the availability of Cluster fleet management, quota policies, resource and capacity visibility, multi-master clusters, and the self-healing resiliency of the individual cluster nodes
@@ -43,43 +43,47 @@ The following table contains an assemblage of requirements inferred by the techn
 
 High-level Requirement/Outcomes | ID	| Requirement Description |	Test Case ID(s)	| Status |
 --- | --- | --- | --- | --- |
-Operate and Manage Kubernetes Infrastructure | RQ01 - 01	| CaaS platform shall provide tools to support multiple tenants/clients<br>CaaS platform shall provide automation/tools/API for governing the configuration of the clusters<br>CaaS platform shall provide role based access control by integrating with identity system(Active directory)<br>CaaS platform shall create and configure a Supervisor Cluster Namespace(s) with Resource Limitations | |
-New user cluster creation |	RQ01 - 02 |	CaaS platform shall provide automation/tools/API for creation,modification, and deletion of kubernetes clusters		
-Namespaces creation and setup - Namespace naming, Resource limitation, network policies | RQ01 - 03 |	CaaS platform shall create and configure a workload Cluster Namespace(s),  Resource Limitations<br>CaaS platform shall provide automation/tools/API to apply Network Policy Enforcement for a Sample App Deployed to a Tanzu Kubernetes Cluster | |		
-Limited permission to namespaces access grant - ADFS integretion, 24 hours assess token creation/delivery |	RQ01 - 04 |	CaaS platform shall provide automation/tools/API to apply RBAC to a Tanzu Kubernetes Grid Cluster and Granting Developer Access | |
-Istio/Service Mesh installation |	RQ01 - 05 |	CaaS platform shall provide lifecycle management functions(create, modify, delete) for Service mesh | |
-DNS and Cert - Use existing doamin and certs, wildcard already there |	RQ01 - 06 |	CaaS platform shall provide delegated DNS for applications hosted in kubernetes clusters<br>CaaS platform shall facilitate the automatic provisioning of Layer-7 HTTP load-balancers for Kubernetes ingress resources.<br>CaaS platform shall allow the importation of custom CA-signed certificates for use with Kubernetes ingress resources | |
-Image Registry, Image scaning |	RQ01 - 07 |	TBD<br>CaaS platform shall provide automation/tools/API to apply content trust policies on TKG clusters to access images from a private container registry | |
-jFrog artifactory integration |	RQ01 - 08 |	CaaS platform shall provide cluster access to the images residing in the private jFrog Container Registry | |
-Monitoring/Tracing |	RQ01 - 09 |	CaaS platform shall provide tools for monitoring the infrastructure(virtual machines, pods, containers, ingress) of the kubernetes clusters | |
-Dynatrace client deployment |	RQ01 - 10 |	CaaS platform shall support Dynatrace client deployment | |
-Provide access and collaborate with engineering team to deploy test applications, Scai and test at the application level |	RQ01 - 11 |	CaaSplatformshall aprovide utomation/tools/API to access and collaborate with engineering team to deploy test applications(Scai) | |
-Secured access from application workload to existing VM based Oracle database deployment |	RQ01 - 12 |	CaaS platform shall support secured access from application workload to existing VM based Oracle database deployment. | |
-deploy over 2 hosts, turn off one host  |	RQ01 - 13 |	CaaS platform shall support Self-Healing Tanzu Kubernetes Cluster | |
-logs to splunk, esp security related logs.  |	RQ01 - 14 |	CaaS platform shall support integration to log aggregators(Splunk) | |
-Node OS upgrade |	RQ01 - 15 |	TBD | |
-Kuberentes version upgrade |	RQ01 - 16 |	CaaS platform shall provide automation/tools/API for cluster upgrade | |
-Software patching/upgrade |	RQ01 - 17 |	TBD | |
-Vernerbility scanning and alerting |	RQ01 - 18 |	TBD | |
-Cert creation and rotation, if needed  |	RQ01 - 19 |	CaaS platform shall provide automation/tools/API to manage platform Certs | |
-Resource monitoring and alerting |	RQ01 - 20 |	CaaS platform shall provide tools for monitoring the infrastructure(virtual machines, pods, containers, ingress) of the kubernetes clusters<br>CaaS platform shall alert based on thresholds<br>CaaS platform shall provide monitoring dashboards for operators | |
-Backup and Restore - cluster level and app level |	RQ01 - 21 |	CaaS platform shall provide automation/tools/API to Backup and Restore a Tanzu Kubernetes Cluster(s), and Apps | |
-Networking needs for communication between base, adming, and user clusters |	RQ01 - 22 |	TBD | |		
-External LB provision and attachment - Supposed to be provided NSX |	RQ01 - 23 |	CaaS platform shall provide tools for provisioning load balancers/ingress for the kubernetes clusters | |
-Storage attachment  |	RQ01 - 24 |	CaaS platform shall automate the Kubernetes storage provider integration so Kubernetes pods can mount static and dynamic persistent volumes from existing datastores<br>CaaS platform shall provide persistent storage capabilities for containerized applications | |
-Firewall/Route to Oracle database stack - ACLs to single IP |	RQ01 - 25 |	CaaS platform shall support on-demand configuration of network security policies, which allow for micro-segmenting flows between two (2) or more pods sharing a common network or between namespaces and external IP networks | |
-Cluster access kubeconfig management and integration with SPM AD |	RQ01 - 26 |	CaaS platform shall provide role based access control on worker clusters by integrating with SPM Active directory | |
-Certificates provision and management for cluster communication user |	RQ01 - 27 |	CaaS platform shall allow the importation of custom CA-signed certificates for use with Kubernetes ingress resources | |
-Certificates provision and management for applications  |	RQ01 - 28 |	TBD<br>CaaS platform shall allow the importation of custom CA-signed certificates for use with Kubernetes ingress resources | |
-Secret management, integration with on-prem Vault service |	RQ01 - 29 |	CaaS platform shall provide automation/tools/api to integration with on-prem Vault service for secrets management on worker clusters | |
-Virus scan service, WAF, IDS/IPS TBD |	RQ01 - 30 |	TBD | |
-Built-in automation |	RQ01 - 31 |	TBD | |
-Api support  |	RQ01 - 32 |	TBD | |
-24*7 support |	RQ01 - 33 |	TBD | |
-professional services |	RQ01 - 34 |	TBD | |
-Turn-around time |	RQ01 - 35 |	TBD | |
-Toolset usability |	RQ01 - 36 |	TBD | |
-Performance |	RQ01 - 37 |	TBD | |
+Operate and Manage Kubernetes Infrastructure | RQ01 - 01	| CaaS platform shall provide tools to support multiple tenants/clients | [SC01-TC01](scenarios/operator/sc01-tc01.md) [SC01-TC02](scenarios/operator/sc01-tc02.md)|
+Operate and Manage Kubernetes Infrastructure | RQ01 - 02	| CaaS platform shall provide role based access control by integrating with identity system(Active directory) | [SC01-TC02](scenarios/operator/sc01-tc02.md)|
+Operate and Manage Kubernetes Infrastructure | RQ01 - 03	| CaaS platform shall create and configure a Supervisor Cluster Namespace(s) with Resource Limitations | [SC01-TC03](scenarios/operator/sc01-tc03.md)|
+Operate and Manage Kubernetes Infrastructure | RQ01 - 04	| Supervisor Cluster Control Plane Access and Logging | [SC01-TC04](scenarios/operator/sc01-tc04.md)|
+Operate and Manage Kubernetes Infrastructure | RQ01 - 05	| CaaS platform shall provide automation/tools/API for governing the configuration of the clusters | [SC01-TC05](scenarios/operator/sc01-tc05.md) |
+New user cluster creation |	RQ02 - 01 |	CaaS platform shall provide automation/tools/API for creation,modification, and deletion of kubernetes clusters	| [SC02-TC01](scenarios/devops/sc02-tc01.md)|
+Namespaces creation and setup - Namespace naming, Resource limitation, network policies | RQ02- 03 |	CaaS platform shall create and configure a workload Cluster Namespace(s),  Resource Limitations<br>CaaS platform shall provide automation/tools/API to apply Network Policy for Traffic Management inside Kubernetes | SC02-TC12 |		
+Limited permission to namespaces access grant - ADFS integretion, 24 hours assess token creation/delivery |	RQ02 - 04 |	CaaS platform shall provide automation/tools/API to apply RBAC to a Tanzu Kubernetes Grid Cluster and Granting Developer Access | SC02-TC02 |
+Istio/Service Mesh installation |	RQ02- 05 |	CaaS platform shall provide lifecycle management functions(create, modify, delete) for Service mesh | SC02-TC08 |
+DNS and Cert - Use existing doamin and certs, wildcard already there |	RQ02- 06 |	CaaS platform shall provide delegated DNS for applications hosted in kubernetes clusters<br>CaaS platform shall facilitate the automatic provisioning of Layer-7 HTTP load-balancers for Kubernetes ingress resources.<br>CaaS platform shall allow the importation of custom CA-signed certificates for use with Kubernetes ingress resources<br>Tanzu Kubernetes Cluster Ingress with NSX-ALB | SC02-TC10 SC02-TC11 SC02-TC13 sc02-tc06.md |
+Image Registry, Image scaning |	RQ02- 07 |	TBD<br>CaaS platform shall provide automation/tools/API to apply content trust policies on TKG clusters to access images from a private container registry | SC02-TC07 |
+jFrog artifactory integration |	RQ02- 08 |	CaaS platform shall provide cluster access to the images residing in the private jFrog Container Registry | SC02-TC07 |
+Monitoring/Tracing |	RQ02- 09 |	CaaS platform shall provide tools for monitoring the infrastructure(virtual machines, pods, containers, ingress) of the kubernetes clusters | TMC, TO, AVI |
+Dynatrace client deployment |	RQ02- 10 |	CaaS platform shall support Dynatrace client deployment | Work with team on dynatrace setup for the application |
+Provide access and collaborate with engineering team to deploy test applications, Scai and test at the application level |	RQ02- 11 |	CaaSplatformshall aprovide utomation/tools/API to access and collaborate with engineering team to deploy test applications(Scai) | Work with team to deploy Scai application|
+Secured access from application workload to existing VM based Oracle database deployment |	RQ02- 12 |	CaaS platform shall support secured access from application workload to existing VM based Oracle database deployment. | sc02-tc10.md |
+deploy over 2 hosts, turn off one host  |	RQ02- 13 |	CaaS platform shall support Self-Healing Tanzu Kubernetes Cluster | sc04-tc02.md |
+logs to splunk, esp security related logs.  |	RQ02- 14 |	CaaS platform shall support integration to log aggregators(Splunk) | SC02-TC06 |
+Node OS upgrade |	RQ02- 15 |	TBD | |
+Kuberentes version upgrade |	RQ02- 16 |	CaaS platform shall provide automation/tools/API for cluster upgrade | sc04-tc06.md |
+Software patching/upgrade |	RQ02- 17 |	TBD | |
+Vernerbility scanning and alerting |	RQ02- 18 |	TBD | |
+Cert creation and rotation, if needed  |	RQ02- 19 |	CaaS platform shall provide automation/tools/API to manage platform Certs | |
+Resource monitoring and alerting |	RQ02- 20 |	CaaS platform shall provide tools for monitoring the infrastructure(virtual machines, pods, containers, ingress) of the kubernetes clusters<br>CaaS platform shall alert based on thresholds<br>CaaS platform shall provide monitoring dashboards for operators | |
+Backup and Restore - cluster level and app level |	RQ02- 21 |	CaaS platform shall provide automation/tools/API to Backup and Restore a Tanzu Kubernetes Cluster(s), and Apps | sc04-tc05.md |
+Networking needs for communication between base, adming, and user clusters |	RQ02- 22 |	TBD | |		
+External LB provision and attachment - Supposed to be provided NSX |	RQ02- 23 |	CaaS platform shall provide tools for provisioning load balancers/ingress for the kubernetes clusters | |
+Storage attachment  |	RQ02- 24 |	CaaS platform shall automate the Kubernetes storage provider integration so Kubernetes pods can mount static and dynamic persistent volumes from existing datastores<br>CaaS platform shall provide persistent storage capabilities for containerized applications | |
+Firewall/Route to Oracle database stack - ACLs to single IP |	RQ02- 25 |	CaaS platform shall support on-demand configuration of network security policies, which allow for micro-segmenting flows between two (2) or more pods sharing a common network or between namespaces and external IP networks | |
+Cluster access kubeconfig management and integration with SPM AD |	RQ02- 26 |	CaaS platform shall provide role based access control on worker clusters by integrating with SPM Active directory | |
+Certificates provision and management for cluster communication user |	RQ02- 27 |	CaaS platform shall allow the importation of custom CA-signed certificates for use with Kubernetes ingress resources | |
+Certificates provision and management for applications  |	RQ02- 28 |	TBD<br>CaaS platform shall allow the importation of custom CA-signed certificates for use with Kubernetes ingress resources | |
+Secret management, integration with on-prem Vault service |	RQ02- 29 |	CaaS platform shall provide automation/tools/api to integration with on-prem Vault service for secrets management on worker clusters | |
+Virus scan service, WAF, IDS/IPS TBD |	RQ02- 30 |	IDS/IPS - TBD | |
+Built-in automation |	RQ02- 31 |	Non-functional requirement - TBD | |
+Api support  |	RQ02- 32 |	Non-functional requirement - TBD | |
+24*7 support |	RQ02- 33 |	Non-functional requirement - TBD | |
+professional services |	RQ02- 34 |	Non-functional requirement - TBD | |
+Turn-around time |	RQ02- 35 |	Non-functional requirement - TBD | |
+Toolset usability |	RQ02- 36 |	Non-functional requirement - TBD | |
+Performance |	RQ02- 37 |	Non-functional requirement - TBD | |
 
 
 ## Test Environment

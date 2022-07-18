@@ -1,0 +1,41 @@
+apiVersion: learningcenter.tanzu.vmware.com/v1beta1
+kind: Workshop
+metadata:
+  name: lab-tanzu-env
+  namespace: learning-center-guided-ui
+spec:
+  content:
+    files: github.com/samarsinghal/tko-poc
+    image: gcr.io/pa-sasinghal/tanzu_env:latest
+  description: An workshop env to explore Tanzu
+  difficulty: intermediate
+  duration: 120m
+  session:
+    applications:
+      docker:
+        enabled: true
+      registry:
+        enabled: true
+      terminal:
+        enabled: true
+    namespaces:
+      budget: xx-large
+    objects:
+    - apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRoleBinding
+      metadata:
+        name: $(session_namespace)-cluster-admin
+      roleRef:
+        apiGroup: rbac.authorization.k8s.io
+        kind: ClusterRole
+        name: cluster-admin
+      subjects:
+      - kind: ServiceAccount
+        name: $(service_account)
+        namespace: $(workshop_namespace)
+  tags:
+  - containers
+  title: Tanzu for Kubernetes Operations
+  url: https://github.com/samarsinghal/tko-poc
+  vendor: eduk8s.io
+  
